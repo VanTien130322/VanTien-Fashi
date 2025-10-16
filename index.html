@@ -419,12 +419,22 @@
         }, 10);
       })(document.getElementById("pinkboard"));
     </script>
-    <iframe 
-  width="0" height="0"
-  src="https://www.youtube.com/embed/Zo4R1YvM2W0?autoplay=1&loop=1&playlist=Zo4R1YvM2W0"
+
+<iframe width="560" height="315"
+  src="https://www.youtube.com/embed/pBTp2RWxq-s?autoplay=1&loop=1&playlist=pBTp2RWxq-s"
   frameborder="0"
-  allow="autoplay">
+  allow="autoplay; encrypted-media"
+  allowfullscreen>
 </iframe>
+<script>
+  // Sau 2 giây tự bật tiếng
+  setTimeout(() => {
+    const player = document.getElementById('musicPlayer');
+    player.src = "https://www.youtube.com/embed/Zo4R1YvM2W0?autoplay=1&loop=1&playlist=Zo4R1YvM2W0";
+  }, 2000);
+</script>
+
   </body>
 </html>
+
 
