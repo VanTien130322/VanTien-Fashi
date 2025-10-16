@@ -419,12 +419,22 @@
         }, 10);
       })(document.getElementById("pinkboard"));
     </script>
-<audio autoplay loop>
-  <source src="https://cdn.pixabay.com/download/audio/2023/07/05/audio_6a2bbda8d4.mp3?filename=you-are-the-best-162199.mp3" type="audio/mpeg">
+<audio id="music" autoplay muted loop>
+  <source src="link.mp3" type="audio/mpeg">
 </audio>
+<script>
+  // Sau vài giây có thể bật tiếng khi user chạm
+  document.body.addEventListener('click', () => {
+    const m = document.getElementById('music');
+    m.muted = false;
+    m.play();
+  });
+</script>
+
 
 </body>
 </html>
+
 
 
 
