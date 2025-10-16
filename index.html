@@ -419,21 +419,20 @@
         }, 10);
       })(document.getElementById("pinkboard"));
     </script>
-<audio id="music" autoplay muted loop>
-  <source src="link.mp3" type="audio/mpeg">
-</audio>
+<iframe width="0" height="0"
+  src="https://www.youtube.com/embed/Ri3WsPDi4MY?autoplay=1&loop=1&playlist=Ri3WsPDi4MY&mute=1"
+  frameborder="0"
+  allow="autoplay; encrypted-media">
+</iframe>
 <script>
-  // Sau vài giây có thể bật tiếng khi user chạm
-  document.body.addEventListener('click', () => {
-    const m = document.getElementById('music');
-    m.muted = false;
-    m.play();
-  });
+  setTimeout(() => {
+    const ifr = document.querySelector('iframe');
+    ifr.src = "https://www.youtube.com/embed/Ri3WsPDi4MY?autoplay=1&loop=1&playlist=Ri3WsPDi4MY";
+  }, 2000);
 </script>
-
-
 </body>
 </html>
+
 
 
 
