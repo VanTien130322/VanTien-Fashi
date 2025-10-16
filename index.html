@@ -419,22 +419,21 @@
         }, 10);
       })(document.getElementById("pinkboard"));
     </script>
-
-<iframe width="560" height="315"
-  src="https://www.youtube.com/embed/pBTp2RWxq-s?autoplay=1&loop=1&playlist=pBTp2RWxq-s"
+<iframe id="musicPlayer" width="0" height="0"
+  src=""
   frameborder="0"
-  allow="autoplay; encrypted-media"
-  allowfullscreen>
+  allow="autoplay; encrypted-media">
 </iframe>
-<script>
-  // Sau 2 giây tự bật tiếng
-  setTimeout(() => {
-    const player = document.getElementById('musicPlayer');
-    player.src = "https://www.youtube.com/embed/Zo4R1YvM2W0?autoplay=1&loop=1&playlist=Zo4R1YvM2W0";
-  }, 2000);
-</script>
 
+<script>
+  // Khi người dùng click vào bất kỳ đâu, bật nhạc
+  document.body.addEventListener('click', function() {
+    const player = document.getElementById('musicPlayer');
+    player.src = "https://www.youtube.com/embed/pBTp2RWxq-s?autoplay=1&loop=1&playlist=pBTp2RWxq-s";
+  }, { once: true }); // chỉ chạy 1 lần
+</script>
   </body>
 </html>
+
 
 
