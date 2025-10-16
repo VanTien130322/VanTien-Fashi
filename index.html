@@ -419,19 +419,35 @@
         }, 10);
       })(document.getElementById("pinkboard"));
     </script>
-<iframe width="0" height="0"
-  src="https://www.youtube.com/embed/Ri3WsPDi4MY?autoplay=1&loop=1&playlist=Ri3WsPDi4MY&mute=1"
-  frameborder="0"
-  allow="autoplay; encrypted-media">
-</iframe>
-<script>
-  setTimeout(() => {
-    const ifr = document.querySelector('iframe');
-    ifr.src = "https://www.youtube.com/embed/Ri3WsPDi4MY?autoplay=1&loop=1&playlist=Ri3WsPDi4MY";
-  }, 2000);
-</script>
+ <audio id="romanticMusic" autoplay loop muted>
+    <source src="https://www.mboxdrive.com/yoasobi_idol.mp3" type="audio/mpeg">
+    Trình duyệt của bạn không hỗ trợ phát nhạc.
+  </audio>
+
+  <script>
+    const music = document.getElementById("romanticMusic");
+
+    // Đợi vài giây để trang load ổn định
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        music.play().then(() => {
+          let vol = 0.0;
+          const fade = setInterval(() => {
+            if (vol < 1.0) {
+              vol += 0.05;
+              music.volume = vol;
+            } else {
+              clearInterval(fade);
+            }
+          }, 300);
+          music.muted = false; // bật tiếng dần
+        }).catch(err => console.log("Không tự chạy được:", err));
+      }, 1500); // delay 1.5s cho tự nhiên
+    });
+  </script>
 </body>
 </html>
+
 
 
 
